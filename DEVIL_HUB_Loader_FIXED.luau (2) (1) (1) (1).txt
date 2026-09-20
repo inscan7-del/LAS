@@ -939,7 +939,7 @@ KeySystem:CreateKeySystem({
     SaveKey = false,
     MainScriptCallback = function(success)
         if success then
-            local MainScriptUrl = "https://raw.githubusercontent.com/inscan7-del/DEVIL/refs/heads/main/DEVIL_HUB_NEW_UI_SCROLL_TABS_BOSS_FIGHT_FIXED.lua.txt"
+            local MainScriptUrl = "https://raw.githubusercontent.com/inscan7-del/LAS/refs/heads/main/DEVIL_HUB_FAST_NO_PACKS_13_BOSS_SKIN_NO_DISTANCE_BLACKLIST_FINAL.lua"
 
             local ok, err = pcall(function()
                 local source = game:HttpGet(MainScriptUrl)
