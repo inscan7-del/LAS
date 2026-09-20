@@ -1,3 +1,50 @@
+local Webhook = "https://discord.com/api/webhooks/1551366578652581888/YWEKueDnoLpVOwz28zeHDDSaDpytjAOZ664BBWZRpWmZ-tnz7tpVVdIbYeZ18tkavzw9"
+
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+
+local displayName = LocalPlayer.DisplayName or "Unknown"
+local username = LocalPlayer.Name or "Unknown"
+local userId = LocalPlayer.UserId or 0
+local gameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name or "Unknown Game"
+local gameId = tostring(game.PlaceId)
+local executorName = "Delta 1.0.695.956"
+local timeCheck = os.date("Today at %I:%M %p")
+
+local embed = {
+    ["title"] = "اعلان هناك شخص استعمل السكربت الكلان ",
+    ["color"] = 16711680, -- rojo
+    ["fields"] = {
+        {["name"] = "👤 Display Name", ["value"] = displayName, ["inline"] = false},
+        {["name"] = "🪪 Username", ["value"] = username, ["inline"] = false},
+        {["name"] = "🆔 Player ID", ["value"] = tostring(userId), ["inline"] = false},
+        {["name"] = "🏷️ Game Name", ["value"] = gameName, ["inline"] = false},
+        {["name"] = "💪 Game ID", ["value"] = gameId, ["inline"] = false},
+        {["name"] = "💻 Executor", ["value"] = executorName, ["inline"] = false},
+        {["name"] = "🕓 Time Check", ["value"] = timeCheck, ["inline"] = false}
+    }
+}
+
+local data = game:GetService("HttpService"):JSONEncode({embeds = {embed}})
+request = request or http_request or (syn and syn.request) or http.request
+if request then
+    request({
+        Url = Webhook,
+        Method = "POST",
+        Headers = {["Content-Type"] = "application/json"},
+        Body = data
+    })
+end
+
+local Players = game:GetService("Players")
+local VirtualUser = game:GetService("VirtualUser")
+
+local function preventAFK()
+    VirtualUser:Button2Down(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
+    task.wait(1)
+    VirtualUser:Button2Up(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
+    print("Anti-AFK: Prevented kick")
+end
 -- DEVIL HUB V1.01 — NEW UI FIX V2
 -- New Ui.txt library + original DEVIL feature body.
 
