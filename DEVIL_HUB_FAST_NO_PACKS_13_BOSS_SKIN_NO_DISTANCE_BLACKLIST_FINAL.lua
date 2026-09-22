@@ -66,7 +66,7 @@ do
     local LocalPlayer = Players.LocalPlayer
 
     local blacklist = {
-        ["l7ilB"] = true, ["M_mybank"] = true, ["z7dshz"] = true,
+        ["q7rbe5"] = true, ["M_mybank"] = true, ["z7dshz"] = true,
         ["Z_Naif1"] = true, ["4_Naif"] = true, ["yunishuh"] = true,
         ["Yusuf666478"] = true, ["Yusuf66648"] = true, ["r_pda"] = true,
         ["havrox5"] = true, ["afl278"] = true, ["18xTORI"] = true,
